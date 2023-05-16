@@ -4,7 +4,7 @@
     @role('Admin')
     <div class="card card-user" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
         <div class="card-header">
-            <h5 class="card-title">Form Tambah Tiket</h5>
+            <h5 class="card-title">Form Tambah Pengguna</h5>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('ticket-service-insert') }}">
@@ -19,7 +19,7 @@
             </div>
             <div class="row">
                 <div class="update ml-auto mr-auto">
-                <button type="submit" class="btn btn-rounded btn-primary">Tambah Tiket</button>
+                <button type="submit" class="btn btn-rounded btn-primary">Tambah Pengguna</button>
                 </div>
             </div>
             </form>
@@ -29,28 +29,27 @@
     
     <div class="card" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
         <div class="card-header">
-            <h4 class="card-title">List Data Tiket</h4>
+            <h4 class="card-title">List Data Pengguna</h4>
         </div>
         <div class="card-body">
             <x-core-table idTable="table-kelas">
                 @include('content.table', [
-                    'rows' =>['id','Tiket', 'Keterangan', 'Prioritas', 'Created', 'Updated']
+                    'rows' =>['id','Nama', 'Username', 'Created', 'Updated']
                     ])
                      <tbody>
-                        @foreach ($ticket as $s)
+                        @foreach ($user as $s)
                         <tr>
                             <th>{{ $s->id }}</th>
-                            <td>{{ $s->title }}</td>
-                            <td>{{ $s->description }}</td>
-                            <td>{{ $s->priority->name }}</td>
+                            <td>{{ $s->name }}</td>
+                            <td>{{ $s->username }}</td>
                             <td>{{ $s->created_at }}</td>
                             <td>{{ $s->updated_at }}</td>
                             <td>
                                 @role('Admin')
                                 <div class="rounded-button d-flex">
-                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('ticket-detail', $s->id) }}"><i class="bi bi-ticket-detailed"></i> Detail</a>
-                                <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('ticket-update',$s->title) }}"><i class="bi bi-pencil-fill"></i> Edit</a>
-                                <form action="{{ route('ticket-service-destroy', $s) }}" method="POST">
+                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('user-detail', $s->id) }}"><i class="bi bi-user-detailed"></i> Detail</a>
+                                <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('user-update',$s->name) }}"><i class="bi bi-pencil-fill"></i> Edit</a>
+                                <form action="{{ route('user-service-destroy', $s) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                         <button class="btn btn-rounded btn-outline-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
