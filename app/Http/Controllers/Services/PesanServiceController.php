@@ -26,7 +26,7 @@ class PesanServiceController extends Controller
         $post->metode_id = $data['metode_id'];
         $post->user_id = Auth::id(); // set user_id berdasarkan user yang sedang login
         $post->save();
-        return redirect()->route('pesan');
+        return redirect()->route('riwayat');
     }
 
     public function update(Request $request, Pesan $pesan)

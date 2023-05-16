@@ -21,17 +21,9 @@
                             <td>{{ $s->created_at }}</td>
                             <td>{{ $s->updated_at }}</td>
                             <td>
-                                @role('Admin')
                                 <div class="rounded-button d-flex">
-                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('pesan-detail', $s->id) }}"><i class="bi bi-pesan-detailed"></i> Detail</a>
-                                <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('pesan-update',$s->id) }}"><i class="bi bi-pencil-fill"></i> Edit</a>
-                                <form action="{{ route('pesan-service-destroy', $s) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                        <button class="btn btn-rounded btn-outline-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
-                                </form>
+                                <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('pesan-invoice', $s->id) }}"><i class="bi bi-ticket-detailed"></i> Cetak Bukti</a>
                                 </div>
-                                @endrole
                             </td>
                         </tr>
                         @endforeach

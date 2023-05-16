@@ -12,8 +12,24 @@
             <div class="row">
                 <div class="col-md-6 pr-1">
                     <div class="form-group">
-                    <label>Kelas</label>
-                    <input type="text" class="form-control" name="nama_kelas" placeholder="Masukkan Kelas">
+                    <label>Nama Tiket</label>
+                    <input type="text" class="form-control" name="title" placeholder="Masukkan Nama Tiket..">
+                    </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                    <div class="form-group">
+                    <label>Deskripsi Tiket</label>
+                    <input type="text" class="form-control" name="description" placeholder="Masukkan Deskripsi..">
+                    </div>
+                </div>
+                <div class="col-lg-6 pr-1">
+                    <div class="form-group">
+                        <label>Prioritas</label>
+                        <select class="form-control" name="priority_id" id="priority_id">
+                            @foreach ($priority as $k)
+                            <option value="{{ $k->id }}">{{ $k->name }} - Rp.{{ $k->price }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
             </div>

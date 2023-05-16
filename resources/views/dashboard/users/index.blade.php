@@ -7,15 +7,37 @@
             <h5 class="card-title">Form Tambah Pengguna</h5>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('ticket-service-insert') }}">
+            <form method="POST" action="{{ route('user-service-insert') }}">
             @csrf
             <div class="row">
                 <div class="col-md-6 pr-1">
                     <div class="form-group">
-                    <label>Kelas</label>
-                    <input type="text" class="form-control" name="nama_kelas" placeholder="Masukkan Kelas">
+                    <label>Nama Lengkap</label>
+                    <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Lengkap..">
                     </div>
                 </div>
+                <div class="col-md-6 pl-1">
+                    <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Masukkan Username..">
+                    </div>
+                </div>
+                <div class="col-md-6 pr-1">
+                    <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password">
+                    </div>
+                  </div>
+                <div class="col-lg-6 pl-1">
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select class="form-control" name="roles" id="roles">
+                            @foreach ($roles as $k)
+                            <option value="{{ $k }}">{{ $k }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                  </div>
             </div>
             <div class="row">
                 <div class="update ml-auto mr-auto">
@@ -47,7 +69,7 @@
                             <td>
                                 @role('Admin')
                                 <div class="rounded-button d-flex">
-                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('user-detail', $s->id) }}"><i class="bi bi-user-detailed"></i> Detail</a>
+                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('user-detail', $s->id) }}"><i class="bi bi-ticket-detailed"></i> Detail</a>
                                 <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('user-update',$s->name) }}"><i class="bi bi-pencil-fill"></i> Edit</a>
                                 <form action="{{ route('user-service-destroy', $s) }}" method="POST">
                                     @csrf

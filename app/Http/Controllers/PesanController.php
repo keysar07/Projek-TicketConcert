@@ -37,4 +37,17 @@ class PesanController extends Controller
             'pesan' => $pesan
         ]);
     }
+
+    public function invoice(Pesan $pesan)
+    {
+        $metode = Metode::all();
+        $ticket = Ticket::all();
+        $user = User::all();
+        return view('dashboard.riwayats.ticket', [
+            'pesan' => $pesan,
+            'metode' => $metode,
+            'ticket' => $ticket,
+            'user' => $user
+        ]);
+    }
 }
