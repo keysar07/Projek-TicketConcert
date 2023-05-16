@@ -27,8 +27,10 @@ class TicketController extends Controller
 
     public function edit(Ticket $ticket)
     {
+        $priority = Priority::all();
         return view('dashboard.tickets.update', [
-            'ticket' => $ticket
+            'ticket' => $ticket,
+            'priority' => $priority
         ]);
     }
 }

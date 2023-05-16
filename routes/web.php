@@ -49,7 +49,7 @@ Route::group([
         Route::get('/create', [TicketController::class, 'create'])
             ->middleware('auth')
             ->name('ticket-create');
-        Route::get('/update/{ticket:nama_ticket}', [TicketController::class, 'edit'])
+        Route::get('/update/{ticket:title}', [TicketController::class, 'edit'])
             ->middleware('auth')
             ->name('ticket-update');
         Route::get('/detail/{ticket:id}', [TicketController::class, 'detail'])
