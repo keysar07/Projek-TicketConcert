@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard2/./vendor/owl-carousel/css/owl.theme.default.min.css') }}">
     <link href="{{ asset('dashboard2/./vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard2/./css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 
 
@@ -43,10 +44,10 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="{{ asset('dashboard2/./images/logo.png') }}" alt="">
-                <img class="logo-compact" src="{{ asset('dashboard2/./images/logo-text.png') }}" alt="">
-                <img class="brand-title" src="{{ asset('dashboard2/./images/logo-text.png') }}" alt="">
+            <a href="#" class="brand-logo">
+                <img class="logo-abbr" src="" alt="">
+                <img class="logo-compact bi bi-ticket-perforated-fill" src="" alt="">
+                <img class="brand-title" src="{{ asset('dashboard2/./images/tikett.png') }}" alt="">
             </a>
 
             <div class="nav-control">

@@ -32,7 +32,7 @@ FACEBOOK: https://www.facebook.com/themefisher
   <meta name="generator" content="Themefisher Small Apps Template v1.0">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('dashboard1/images/tiket.png') }}" />
   
   <!-- PLUGINS CSS STYLE -->
   <link rel="stylesheet" href="{{ asset('dashboard1/plugins/bootstrap/bootstrap.min.css') }}">
@@ -52,7 +52,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="{{ asset('dashboard1/images/logo.png') }}" alt="logo"></a>
+    <a class="navbar-brand" href="#"><img src="{{ asset('dashboard1/images/tiket.png') }}" alt="logo" style="width:10%"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="ti-menu"></span>
@@ -100,7 +100,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 				<a href="{{ route('login') }}" class="btn btn-main-md">Pesan Sekarang</a>
 			</div>
 			<div class="col-md-6 text-center order-1 order-md-2">
-				<img class="img-fluid" src="{{ asset('dashboard1/images/mobile.png') }}" alt="screenshot">
+				<img class="img-fluid" src="{{ asset('dashboard1/images/band.png') }}" alt="screenshot">
 			</div>
 		</div>
 	</div>
@@ -113,21 +113,18 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="row">
 				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
 					<i class="ti-paint-bucket text-primary h1"></i>
-					<h3 class="mt-4 text-capitalize h5 ">themes made easy</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
+					<h3 class="mt-4 text-capitalize h5 ">Design yang simpel</h3>
+					<p class="regular text-muted">Dengan memesan tiket di sini, Anda akan merasa sangat terbantu dengan design web yang memudahkan anda untuk memesan tiket.</p>
 				</div>
 				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
 					<i class="ti-shine text-primary h1"></i>
-					<h3 class="mt-4 text-capitalize h5 ">powerful design</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
+					<h3 class="mt-4 text-capitalize h5 ">Tiket yang aman</h3>
+					<p class="regular text-muted">Kami sudah memiliki lisensi langsung dengan coldplay, sehingga anda tidak perlu khawatir akan kepalsuan dari tiketnya.</p>
 				</div>
 				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
 					<i class="ti-thought text-primary h1"></i>
-					<h3 class="mt-4 text-capitalize h5 ">creative content</h3>
-					<p class="regular text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non, recusandae
-						tempore ipsam dignissimos molestias.</p>
+					<h3 class="mt-4 text-capitalize h5 ">Pemesanan yang mudah</h3>
+					<p class="regular text-muted">Kami membuat proses pemesanan tiket sesimple dan semudah yang diharapkan para customer.</p>
 					</p>
 				</div>
 			</div>
@@ -145,12 +142,9 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-lg-6 ml-auto align-self-center">
 				<div class="feature-content">
 					<!-- Feature Title -->
-					<h2>Increase your productivity with <a
-							href="https://themefisher.com/products/small-apps-free-app-landing-page-template/">Small Apps</a></h2>
+					<h2>World Tour Coldplay di Jakarta</h2>
 					<!-- Feature Description -->
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-						ea commodo consequat.</p>
+					<p>Sebentar lagi Coldplay akan konser di Indonesia untuk pertama kalinya! jangan lewatkan keseruan dari band yang tidak pernah tua ini.. Segera pesan tiketnya di sini sebelum kehabisan.</p>
 				</div>
 				<!-- Testimonial Quote -->
                 
@@ -158,7 +152,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-lg-6 mr-auto justify-content-center">
 				<!-- Feature mockup -->
 				<div class="image-content" data-aos="fade-left">
-					<img class="img-fluid" src="{{ asset('dashboard1/images/feature/feature-new-02.jpg') }}" alt="ipad">
+					<img class="img-fluid" src="{{ asset('dashboard1/images/coldplay.jpeg') }}" alt="ipad">
 				</div>
 			</div>
 		</div>
@@ -181,12 +175,11 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div class="col-lg-12">
 				<div class="content-block">
 					<!-- Heading -->
-					<h2>Watch Our Promo Video</h2>
+					<h2>Lihat Video Promo Coldplay</h2>
 					<!-- Promotional Speech -->
-					<p>Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et,
-						porttitor at sem. Vivamus </p>
+					<p>Anda bisa lihat semeriah apa konser yang diadakan oleh Coldplay. Jadi, tunggu apalagi? ayo pesan tiketnya sekarang </p>
 					<!-- Popup Video -->
-					<a data-fancybox href="https://www.youtube.com/watch?v=jrkvirglgaQ">
+					<a data-fancybox href="https://www.youtube.com/watch?v=Fpn1imb9qZg">
 						<i class="ti-control-play video"></i>
 					</a>
 				</div>
@@ -206,11 +199,11 @@ FACEBOOK: https://www.facebook.com/themefisher
 =============================-->
 <footer>
   <div class="text-center bg-dark py-4">
-    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
+    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href=#">Keysar Jordian</a></small class="text-secondary">
   </div>
 
 	<div class="text-center bg-dark py-1">
-   <small> <p>Distributed By <a href="https://themewagon.com/">Themewagon</a></p></small class="text-secondary">
+   <small> <p>Distributed By <a href="#">Keysar Jordian</a></p></small class="text-secondary">
   </div>
 </footer>
 
