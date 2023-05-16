@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tiket Konser Coldplay</title>
+  <title>Bukti Pemesanan Konser Coldplay</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -44,7 +44,7 @@
 <body>
   <div class="ticket">
     <div class="ticket-header">
-      <h1 class="ticket-title">Tiket Konser Coldplay</h1>
+      <h1 class="ticket-title">Bukti Pemesanan Tiket Konser Coldplay</h1>
     </div>
     <div class="ticket-info">
         <p><strong>ID Tiket:</strong> {{ $pesan->id }}</p>
