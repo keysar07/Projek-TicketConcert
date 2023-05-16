@@ -37,6 +37,27 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('metodes', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('pesans', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('alamat');
+            $table->string('no_telp');
+            $table->foreignId('ticket_id')->constrained('tickets')->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('metode_id')->constrained('metodes')->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -47,5 +68,7 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('prioritys');
         Schema::dropIfExists('tickets');
+        Schema::dropIfExists('metodes');
+        Schema::dropIfExists('pesans');
     }
 };

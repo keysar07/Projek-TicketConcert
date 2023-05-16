@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ticket extends Model
+class Metode extends Model
 {
     use HasFactory;
 
-    protected $table = 'tickets';
+    protected $table = 'metodes';
 
     protected $guarded = ['id'];
-
-    public function priority()
-    {
-        return $this->belongsTo(Priority::class);
-    }
 
     public function pesan()
     {

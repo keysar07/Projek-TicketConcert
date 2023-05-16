@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MetodeController;
+use App\Http\Controllers\PesanController;
+use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\Services\MetodeServiceController;
+use App\Http\Controllers\Services\PesanServiceController;
 use App\Http\Controllers\Services\TicketServiceController;
 use App\Http\Controllers\Services\UserServiceController;
 use App\Http\Controllers\TicketController;
@@ -74,6 +79,56 @@ Route::group([
     });
 });
 
+Route::group([
+    'prefix' => 'Metode',
+], function () {
+    Route::get('/', [MetodeController::class, 'index'])
+        ->middleware('auth')
+        ->name('metode');
+    Route::group([
+        'prefix' => 'Action'
+    ], function () {
+        Route::get('/create', [MetodeController::class, 'create'])
+            ->middleware('auth')
+            ->name('metode-create');
+        Route::get('/update/{metode:name}', [MetodeController::class, 'edit'])
+            ->middleware('auth')
+            ->name('metode-update');
+        Route::get('/detail/{metode:id}', [MetodeController::class, 'detail'])
+            ->middleware('auth')
+            ->name('metode-detail');
+    });
+});
+
+Route::group([
+    'prefix' => 'Pesan',
+], function () {
+    Route::get('/', [PesanController::class, 'index'])
+        ->middleware('auth')
+        ->name('pesan');
+    Route::group([
+        'prefix' => 'Action'
+    ], function () {
+        Route::get('/create', [PesanController::class, 'create'])
+            ->middleware('auth')
+            ->name('pesan-create');
+        Route::get('/update/{pesan:id}', [PesanController::class, 'edit'])
+            ->middleware('auth')
+            ->name('pesan-update');
+        Route::get('/detail/{pesan:id}', [PesanController::class, 'detail'])
+            ->middleware('auth')
+            ->name('pesan-detail');
+    });
+});
+
+Route::group([
+    'prefix' => 'Riwayat',
+], function () {
+    Route::get('/', [RiwayatController::class, 'index'])
+        ->middleware('auth')
+        ->name('riwayat');
+});
+
 
 // Service
 Route::group([
@@ -96,4 +151,26 @@ Route::group([
         ->name('user-service-update');
     route::delete('/delete/{user:id}', [UserServiceController::class, 'destroy'])
         ->name('user-service-destroy');
+});
+
+Route::group([
+    'prefix' => 'Service-Metode'
+], function () {
+    route::post('/insert', [MetodeServiceController::class, 'store'])
+        ->name('metode-service-insert');
+    route::put('/update/{metode:id}', [MetodeServiceController::class, 'update'])
+        ->name('metode-service-update');
+    route::delete('/delete/{metode:id}', [MetodeServiceController::class, 'destroy'])
+        ->name('metode-service-destroy');
+});
+
+Route::group([
+    'prefix' => 'Service-Pesan'
+], function () {
+    route::post('/insert', [PesanServiceController::class, 'store'])
+        ->name('pesan-service-insert');
+    route::put('/update/{pesan:id}', [PesanServiceController::class, 'update'])
+        ->name('pesan-service-update');
+    route::delete('/delete/{pesan:id}', [PesanServiceController::class, 'destroy'])
+        ->name('pesan-service-destroy');
 });
