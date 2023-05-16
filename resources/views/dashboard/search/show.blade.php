@@ -4,13 +4,16 @@
     <div class="card">
         <div class="card-body">
             <div class="alert alert-success" role="alert">
-                Tiket Ditemukan!
+                Tiket Ditemukan dan Valid!
             </div>
                 <div class="card">
                     <div class="card-body">
                         @if($pesan)
                             <h2>{{ $pesan->ticket->title }}</h2>
-                            <p>ID: {{ $pesan->id }}</p>
+                            <p>ID Tiket: {{ $pesan->id }}</p>
+                            <p>Atas Nama: {{ $pesan->user->name }}</p>
+                            <p>Alamat: {{ $pesan->alamat }}</p>
+                            <p>No. Telepon: {{ $pesan->no_telp }}</p>
                             <!-- Tambahkan atribut lainnya yang ingin ditampilkan -->
                             @unless($pesan->checkin_status)
                                 <a href="{{ route('checkin', ['id' => $pesan->id]) }}" class="btn btn-primary">Check-in</a>

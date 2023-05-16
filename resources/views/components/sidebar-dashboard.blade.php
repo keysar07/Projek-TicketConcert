@@ -13,10 +13,12 @@
             class="nav-text {{ Request::is('Riwayat') ? "active" : '' }}">Riwayat Pemesanan</span></a></li>
             @endhasrole
             @hasrole('Admin')
+            <li><a href="{{ route('cari-id') }}" aria-expanded="false"><i class="bi bi-search"></i><span
+            class="nav-text {{ Request::is('Cari-Id') ? "active" : '' }}">Cari ID Tiket</span></a></li>
+            <li><a href="{{ route('laporan-checkin') }}" aria-expanded="false"><i class="bi bi-bookmark-check"></i><span
+            class="nav-text {{ Request::is('Laporan-Checkin') ? "active" : '' }}">Laporan Check-in</span></a></li>
             <li><a href="{{ route('user') }}" aria-expanded="false"><i class="icon icon-single-04"></i><span
             class="nav-text {{ Request::is('User') ? "active" : '' }}">Users</span></a></li>
-            <li><a href="{{ route('cari-id') }}" aria-expanded="false"><i class="icon icon-single-04"></i><span
-            class="nav-text {{ Request::is('Cari-Id') ? "active" : '' }}">Cari ID Tiket</span></a></li>
             @endhasrole
             <li><a href="{{ route('metode') }}" aria-expanded="false"><i class="bi bi-credit-card-2-front"></i><span
             class="nav-text {{ Request::is('Metode') ? "active" : '' }}">Metode Pembayaran</span></a></li>

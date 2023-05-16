@@ -96,4 +96,17 @@ class PesanController extends Controller
             'user' => $user
         ]);
     }
+
+    public function laporanCheckin()
+    {
+        $metode = Metode::all();
+        $ticket = Ticket::all();
+        $user = User::all();
+        return view('dashboard.pesans.sudah-checkin', [
+            'pesan' => Pesan::all(),
+            'metode' => $metode,
+            'ticket' => $ticket,
+            'user' => $user
+        ]);
+    }
 }
