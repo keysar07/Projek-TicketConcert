@@ -12,6 +12,9 @@
                             <h2>{{ $pesan->ticket->title }}</h2>
                             <p>ID: {{ $pesan->id }}</p>
                             <!-- Tambahkan atribut lainnya yang ingin ditampilkan -->
+                            @unless($pesan->checkin_status)
+                                <a href="{{ route('checkin', ['id' => $pesan->id]) }}" class="btn btn-primary">Check-in</a>
+                            @endunless
                         @else
                             <p>Produk tidak ditemukan.</p>
                         @endif

@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-body">
             <div class="alert alert-success" role="alert">
-                Tiket Sudah Check-in!
+                Tiket Sudah di Check-in!
             </div>
       </div>
 </x-dashboard-layout>

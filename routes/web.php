@@ -122,6 +122,9 @@ Route::group([
         Route::get('/invoice/{pesan:id}', [PesanController::class, 'invoice'])
             ->middleware('auth')
             ->name('pesan-invoice');
+        Route::get('/checkin-tickets/{id}/checkin', [PesanController::class, 'checkin'])
+            ->middleware('auth')
+            ->name('checkin');
         Route::get('/check-in', [PesanController::class, 'hasilCheckin'])
             ->middleware('auth')
             ->name('hasil-checkin');

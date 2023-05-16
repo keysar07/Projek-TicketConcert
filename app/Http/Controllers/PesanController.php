@@ -81,7 +81,7 @@ class PesanController extends Controller
         $checkinTicket->checkin_status = true;
         $checkinTicket->save();
 
-        return redirect()->route('checkin-tickets')->with('success', 'Check-in berhasil dilakukan');
+        return redirect()->route('hasil-checkin')->with('success', 'Check-in berhasil dilakukan');
     }
 
     public function hasilCheckin()
