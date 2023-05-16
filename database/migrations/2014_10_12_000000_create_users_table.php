@@ -55,6 +55,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->foreignId('metode_id')->constrained('metodes')->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->boolean('checkin_status')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

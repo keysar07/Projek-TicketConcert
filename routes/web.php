@@ -5,6 +5,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MetodeController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Services\MetodeServiceController;
 use App\Http\Controllers\Services\PesanServiceController;
 use App\Http\Controllers\Services\TicketServiceController;
@@ -121,6 +122,9 @@ Route::group([
         Route::get('/invoice/{pesan:id}', [PesanController::class, 'invoice'])
             ->middleware('auth')
             ->name('pesan-invoice');
+        Route::get('/check-in', [PesanController::class, 'hasilCheckin'])
+            ->middleware('auth')
+            ->name('hasil-checkin');
     });
 });
 
@@ -132,6 +136,23 @@ Route::group([
         ->name('riwayat');
 });
 
+Route::group([
+    'prefix' => 'Cari-Id',
+], function () {
+    Route::get('/', [SearchController::class, 'index'])
+        ->middleware('auth')
+        ->name('cari-id');
+    Route::group([
+        'prefix' => 'Action'
+    ], function () {
+        Route::get('/search', [PesanController::class, 'searchById'])
+            ->middleware('auth')
+            ->name('search-id');
+        Route::get('/hasil', [SearchController::class, 'hasil'])
+            ->middleware('auth')
+            ->name('hasil-id');
+    });
+});
 
 // Service
 Route::group([

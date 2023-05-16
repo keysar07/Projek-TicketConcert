@@ -78,7 +78,6 @@
                             <td>{{ $s->updated_at }}</td>
                             <td>
                                 <div class="rounded-button d-flex">
-                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('pesan-detail', $s->id) }}"><i class="bi bi-ticket-detailed"></i> Detail</a>
                                 <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('pesan-update',$s->id) }}"><i class="bi bi-pencil-fill"></i> Edit</a>
                                 <form action="{{ route('pesan-service-destroy', $s) }}" method="POST">
                                     @csrf
