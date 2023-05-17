@@ -1,9 +1,9 @@
 <x-dashboard-layout>
-    <img src="{{ asset('dashboard2/images/pesan tiket.png') }}" alt="" width="100%" class="mb-3" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+    <img src="{{ asset('dashboard2/images/pemesanan.gif') }}" alt="" width="100%" class="mb-3" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
 
     @role('Pemesan')
 
-    <span style="color: red">*Dimohon jika sudah mengisi form pemesanan segera di screenshot/print buktinya dengan menekan tombol 'Cetak Bukti' pada halaman 'Riwayat Pemesanan'</span>
+    <div class="alert alert-danger" role="alert">*Dimohon jika sudah mengisi form pemesanan segera di screenshot/print buktinya dengan menekan tombol 'Cetak Bukti' pada halaman 'Riwayat Pemesanan'</div>
     
     <div class="card card-user" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
         <div class="card-header">
