@@ -148,6 +148,14 @@ Route::group([
 });
 
 Route::group([
+    'prefix' => 'Laporan-Belum-Checkin',
+], function () {
+    Route::get('/laporan-check-in', [PesanController::class, 'laporanBelumCheckin'])
+        ->middleware('auth')
+        ->name('laporan-belum-checkin');
+});
+
+Route::group([
     'prefix' => 'Cari-Id',
 ], function () {
     Route::get('/', [SearchController::class, 'index'])

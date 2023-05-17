@@ -21,7 +21,7 @@
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
-                                    <h4 class="text-center mb-4">Sign in your account</h4>
+                                    <h4 class="text-center mb-4">Login terlebih dahulu untuk memesan tiketnya</h4>
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
@@ -51,11 +51,11 @@
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-primary btn-block">Sign me in</button>
+                                            <button type="submit" class="btn btn-primary btn-block">Login</button>
                                         </div>
                                     </form>
                                     <div class="new-account mt-3">
-                                        <p>Don't have an account? <a class="text-primary" href="{{ route('register') }}">Sign up</a></p>
+                                        <p>Belum punya akun? <a class="text-primary" href="{{ route('register') }}">Register</a></p>
                                     </div>
                                 </div>
                             </div>
