@@ -8,6 +8,7 @@ use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PesanController extends Controller
 {
@@ -81,6 +82,7 @@ class PesanController extends Controller
         $checkinTicket->checkin_status = true;
         $checkinTicket->save();
 
+        Alert::success('Berhasil Check-in', 'Tiket sudah dicheck-in');
         return redirect()->route('hasil-checkin')->with('success', 'Check-in berhasil dilakukan');
     }
 

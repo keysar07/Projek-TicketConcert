@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pesan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PesanServiceController extends Controller
 {
@@ -26,6 +27,7 @@ class PesanServiceController extends Controller
         $post->metode_id = $data['metode_id'];
         $post->user_id = Auth::id(); // set user_id berdasarkan user yang sedang login
         $post->save();
+        Alert::success('Berhasil Pesan Tiket', 'Data Tiket berhasil ditambah');
         return redirect()->route('riwayat');
     }
 
@@ -46,6 +48,7 @@ class PesanServiceController extends Controller
     public function destroy(Pesan $pesan)
     {
         Pesan::destroy($pesan->id);
+        Alert::success('Hapus Data Pesanan', 'Data Pesan Tiket berhasil dihapus');
         return redirect()->route('pesan');
     }
 }

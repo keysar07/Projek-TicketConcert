@@ -79,6 +79,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
+        @include('sweetalert::alert')
         <div class="content-body">
             <!-- row -->
             <div class="container-fluid">
@@ -125,6 +126,7 @@
     <script src="{{ asset('dashboard2/./vendor/raphael/raphael.min.js') }}"></script>
     <script src="{{ asset('dashboard2/./vendor/morris/morris.min.js') }}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="{{ asset('dashboard2/./vendor/circle-progress/circle-progress.min.js') }}"></script>
     <script src="{{ asset('dashboard2/./vendor/chart.js/Chart.bundle.min.js') }}"></script>

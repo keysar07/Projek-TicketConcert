@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Services;
 use App\Http\Controllers\Controller;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TicketServiceController extends Controller
 {
@@ -16,6 +17,7 @@ class TicketServiceController extends Controller
             'priority_id' => 'required'
         ]);
         Ticket::create($validated);
+        Alert::success('Updated Succesfully', 'Data Ticket berhasil ditambah');
         return redirect()->route('ticket');
     }
 
