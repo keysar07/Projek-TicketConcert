@@ -46,7 +46,6 @@
                             <td>
                                 @role('Admin')
                                 <div class="rounded-button d-flex">
-                                <a class="btn btn-rounded btn-outline-success mr-1" href="{{ route('metode-detail', $s->id) }}"><i class="bi bi-ticket-detailed"></i> Detail</a>
                                 <a class="btn btn-rounded btn-outline-warning mr-1" href="{{ route('metode-update',$s->name) }}"><i class="bi bi-pencil-fill"></i> Edit</a>
                                 <form action="{{ route('metode-service-destroy', $s) }}" method="POST">
                                     @csrf
