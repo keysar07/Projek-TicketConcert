@@ -18,18 +18,14 @@
                 </div>
                 <div class="col-md-6 pl-1">
                     <div class="form-group">
-                    <label>Deskripsi Tiket</label>
-                    <input type="text" class="form-control" name="description" placeholder="Masukkan Deskripsi..">
+                    <label>Harga</label>
+                    <input type="number" class="form-control" name="price" placeholder="Masukkan Harga Tiket..">
                     </div>
                 </div>
-                <div class="col-lg-6 pr-1">
+                <div class="col-md-6 pr-1">
                     <div class="form-group">
-                        <label>Prioritas</label>
-                        <select class="form-control" name="priority_id" id="priority_id">
-                            @foreach ($priority as $k)
-                            <option value="{{ $k->id }}">{{ $k->name }} - Rp.{{ $k->price }}</option>
-                            @endforeach
-                        </select>
+                    <label>Deskripsi Tiket</label>
+                    <input type="text" class="form-control" name="description" placeholder="Masukkan Deskripsi..">
                     </div>
                 </div>
             </div>
@@ -50,7 +46,7 @@
         <div class="card-body">
             <x-core-table idTable="table-kelas">
                 @include('content.table', [
-                    'rows' =>['id','Tiket', 'Keterangan', 'Prioritas', 'Harga', 'Created', 'Updated']
+                    'rows' =>['id','Tiket', 'Keterangan', 'Harga', 'Created', 'Updated']
                     ])
                      <tbody>
                         @foreach ($ticket as $s)
@@ -58,8 +54,7 @@
                             <th>{{ $s->id }}</th>
                             <td>{{ $s->title }}</td>
                             <td>{{ $s->description }}</td>
-                            <td>{{ $s->priority->name }}</td>
-                            <td>{{ $s->priority->price }}</td>
+                            <td>Rp.{{ number_format($s->price, 0, '.', ',') }}</td>
                             <td>{{ $s->created_at }}</td>
                             <td>{{ $s->updated_at }}</td>
                             <td>

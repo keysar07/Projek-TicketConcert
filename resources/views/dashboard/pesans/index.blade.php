@@ -18,12 +18,18 @@
                         <label>Tiket</label>
                         <select class="form-control" name="ticket_id" id="ticket_id">
                             @foreach ($ticket as $k)
-                            <option value="{{ $k->id }}">{{ $k->title }} - Rp.{{ $k->priority->price }}</option>
+                            <option value="{{ $k->id }}">{{ $k->title }} - Rp.{{ $k->price }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-6 pr-1">
+                    <div class="form-group">
+                        <label>Jumlah</label>
+                        <input type="number" class="form-control" name="quantity" placeholder="Masukkan Jumlah Orang..">
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-1">
                     <div class="form-group">
                         <label>Metode Bayar</label>
                         <select class="form-control" name="metode_id" id="metode_id">
@@ -33,13 +39,13 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-6 pl-1">
+                <div class="col-lg-6 pr-1">
                     <div class="form-group">
                         <label>Alamat</label>
                         <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat..">
                     </div>
                 </div>
-                <div class="col-lg-6 pr-1">
+                <div class="col-lg-6 pl-1">
                     <div class="form-group">
                         <label>No. Telepon</label>
                         <input type="number" class="form-control" name="no_telp" placeholder="Masukkan Nomer Telepon..">
@@ -64,7 +70,7 @@
         <div class="card-body">
             <x-core-table idTable="table-kelas">
                 @include('content.table', [
-                    'rows' =>['ID Tiket','Nama', 'Tiket', 'Harga', 'Metode', 'Created', 'Updated']
+                    'rows' =>['ID Tiket','Nama', 'Tiket', 'Jumlah', 'Harga', 'Metode', 'Created', 'Updated']
                     ])
                      <tbody>
                         @foreach ($pesan as $s)
@@ -72,7 +78,8 @@
                             <td>{{ $s->id }}</td>
                             <td>{{ $s->user->name }}</td>
                             <td>{{ $s->ticket->title }}</td>
-                            <td>{{ $s->ticket->priority->price }}</td>
+                            <td>{{ $s->quantity }}</td>
+                            <td>Rp.{{ number_format($s->harga_total, 0, '.', ',') }}</td>
                             <td>{{ $s->metode->name }}</td>
                             <td>{{ $s->created_at }}</td>
                             <td>{{ $s->updated_at }}</td>

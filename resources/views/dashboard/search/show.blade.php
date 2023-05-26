@@ -15,9 +15,11 @@
                             <p>Alamat: {{ $pesan->alamat }}</p>
                             <p>No. Telepon: {{ $pesan->no_telp }}</p>
                             <!-- Tambahkan atribut lainnya yang ingin ditampilkan -->
-                            @unless($pesan->checkin_status)
+                            @if($pesan->checkin_status == false)
                                 <a href="{{ route('checkin', ['id' => $pesan->id]) }}" class="btn btn-primary">Check-in</a>
-                            @endunless
+                            @else
+                            <div class="alert alert-danger" role="alert">Tiket sudah dicheck-in'</div>
+                            @endif
                         @else
                             <p>Produk tidak ditemukan.</p>
                         @endif

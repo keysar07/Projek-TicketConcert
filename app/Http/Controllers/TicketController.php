@@ -10,10 +10,8 @@ class TicketController extends Controller
 {
     public function index()
     {
-        $priority = Priority::all();
         return view('dashboard.tickets.index', [
             'ticket' => Ticket::all(),
-            'priority' => $priority
         ]);
     }
 
@@ -27,10 +25,8 @@ class TicketController extends Controller
 
     public function edit(Ticket $ticket)
     {
-        $priority = Priority::all();
         return view('dashboard.tickets.update', [
             'ticket' => $ticket,
-            'priority' => $priority
         ]);
     }
 }

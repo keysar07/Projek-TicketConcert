@@ -13,11 +13,6 @@ class Ticket extends Model
 
     protected $guarded = ['id'];
 
-    public function priority()
-    {
-        return $this->belongsTo(Priority::class);
-    }
-
     public function pesan()
     {
         return $this->hasMany(Pesan::class);

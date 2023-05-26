@@ -20,20 +20,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('prioritys', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('price');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('price');
             $table->string('description');
-            $table->foreignId('priority_id')->constrained('prioritys')->onUpdate('cascade')
-                ->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -50,6 +41,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('alamat');
+            $table->string('quantity');
+            $table->string('harga_total');
             $table->string('no_telp');
             $table->foreignId('ticket_id')->constrained('tickets')->onUpdate('cascade')
                 ->onDelete('cascade');
@@ -67,7 +60,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('prioritys');
         Schema::dropIfExists('tickets');
         Schema::dropIfExists('metodes');
         Schema::dropIfExists('pesans');

@@ -16,7 +16,7 @@
                             <td>{{ $s->id }}</td>
                             <td>{{ $s->user->name }}</td>
                             <td>{{ $s->ticket->title }}</td>
-                            <td>{{ $s->ticket->priority->price }}</td>
+                            <td>Rp.{{ number_format($s->harga_total, 0, '.', ',') }}</td>
                             <td>{{ $s->metode->name }}</td>
                             <td>{{ $s->created_at }}</td>
                             <td>{{ $s->updated_at }}</td>

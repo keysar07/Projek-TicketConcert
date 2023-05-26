@@ -13,8 +13,8 @@ class TicketServiceController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'price' => 'required',
             'description' => 'required',
-            'priority_id' => 'required'
         ]);
         Ticket::create($validated);
         Alert::success('Updated Succesfully', 'Data Ticket berhasil ditambah');
@@ -25,8 +25,8 @@ class TicketServiceController extends Controller
     {
         $rules = [
             'title' => 'required',
+            'price' => 'required',
             'description' => 'required',
-            'priority_id' => 'required'
         ];
 
         $validateData = $request->validate($rules);
